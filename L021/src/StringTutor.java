@@ -49,14 +49,14 @@ public class StringTutor {
     public boolean checkGreeting(String greeting) {
         if (greeting.endsWith("!")) {
             String[] words = greeting.split("[\\p{Punct}\\s]+");
-            if (words.length == 3 && words[0].equals("Привет") && namePartIsCorrect(words[1]) && namePartIsCorrect(words[2])) {
+            if (words.length == 3 && words[0].equals("Привет") && isNamePartCorrect(words[1]) && isNamePartCorrect(words[2])) {
                 return true;
             }
         }
         return false;
     }
 
-    private boolean namePartIsCorrect(String namePart) {
+    private boolean isNamePartCorrect(String namePart) {
         return namePart.length() > 2 && Character.isUpperCase(namePart.codePointAt(0));
     }
 
